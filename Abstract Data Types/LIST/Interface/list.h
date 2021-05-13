@@ -1,7 +1,7 @@
 /* 
 * LIST abstract data type. 
 * It is an ordered collection of elements (variables) of some type (Data). 
-* Obs: Note that this doesn't mean that the objects are in sorted order, it just means that each object has a position in the List, starting with position zero.
+* Obs: Note that this doesn't mean that the elements are in sorted order, it just means that each element has a position in the List, starting with position zero.
 */
 
 #ifndef LIST_H

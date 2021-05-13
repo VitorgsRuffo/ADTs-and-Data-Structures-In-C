@@ -3,6 +3,7 @@
 #include "adt.h"
 #include "list.h"
 
+
 int main(){
 
     Adt t1 = newAdt(10, 20, "t1");
