@@ -1,11 +1,13 @@
 /*
-* A generic abstract data type. 
-* It can be used when testing other ADTs implementations.
+* A generic abstract data type. It can be used when testing other ADTs implementations.
 */ 
 
 #ifndef ADT_H
 #define ADT_H
 
+/*
+* generic abstract data type. 
+*/
 typedef void* Adt;
 
 Adt newAdt(double x, double y, char* z);

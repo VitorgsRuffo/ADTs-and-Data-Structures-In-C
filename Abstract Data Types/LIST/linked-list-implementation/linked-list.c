@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "list.h"
+#include "../list.h"
 
 /*
 * Linked list is a data structure. We can use it to implement LIST abstract data type.
@@ -56,12 +56,13 @@ int listAdd(List Li, Data data){
     if((*li).last == NULL){ //If list is empty.
         
         (*li).first = newNode;
-        (*li).last = newNode;
 
     }else{ 
 
         (*((*li).last)).next = newNode;
     }
+
+    (*li).last = newNode;
 
     (*li).size++;
     return 1;
@@ -144,6 +145,7 @@ Data listRemove(List Li, int position){
 
     }
 
+    (*li).size--;
     return removedData;
 }
 
@@ -195,13 +197,13 @@ void printList(List Li, dataToString function){
     if(Li == NULL || function == NULL) return;
     list* li = (list*) Li;
 
-    printf("List:\n->");
-    char* string;
+    char* string; int i = 0;
     node* currentNode = (*li).first;
     while(currentNode != NULL){
         
-        printf("[%s]->", string = (*function)((*currentNode).data));
+        printf("(%d)[%s]->\n", i, string = (*function)((*currentNode).data));
         free(string);
+        i++;
         currentNode = (*currentNode).next;
     }
     printf("\n\n");
