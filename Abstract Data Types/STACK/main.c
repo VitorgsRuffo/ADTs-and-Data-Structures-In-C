@@ -10,7 +10,7 @@ void top(Stack stack);
 
 int main(){
 
-    Stack stack = newStack(3);
+    Stack stack = newStack();
 
     int option;
     do {

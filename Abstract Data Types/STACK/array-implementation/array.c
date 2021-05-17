@@ -6,6 +6,8 @@
 * Array is a data structure. We can use it to implement Stack abstract data type.
 */
 
+#define INITIAL_CAPACITY 10
+
 typedef struct {
     int capacity;
     int top;
@@ -13,19 +15,25 @@ typedef struct {
 }array;
 
 
-Stack newStack(int capacity){
+Stack newStack(void){
     array* arr = (array*) malloc(sizeof(array));
     if(arr == NULL) return NULL;
 
-    (*arr).capacity = capacity;
+    (*arr).capacity = INITIAL_CAPACITY;
     (*arr).top = -1;
-    (*arr).elements = (Data*) malloc(capacity * sizeof(Data));
+    (*arr).elements = (Data*) malloc(INITIAL_CAPACITY * sizeof(Data));
     if((*arr).elements == NULL){
         free(arr);
         return NULL;
     }
 
     return arr;
+}
+
+int stackSize(Stack St){
+    if(St == NULL) return -1;
+    array* arr = (array*) St;
+    return ((*arr).top + 1);
 }
 
 int isStackEmpty(Stack St){

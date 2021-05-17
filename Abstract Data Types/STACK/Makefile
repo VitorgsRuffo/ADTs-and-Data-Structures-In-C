@@ -4,6 +4,7 @@ flags = -std=c99 -fstack-protector-all -g -Wall -Werror
 
 obj = main.o adt.o 
 
+all: stack-array-implementation stack-linked-list-implementation
 
 stack-array-implementation: $(obj) array.o
 	$(CC) $(obj) array.o -o stack-array-implementation -lm
