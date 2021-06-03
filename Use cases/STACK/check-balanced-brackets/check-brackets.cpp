@@ -31,7 +31,7 @@ int isExpressionBracketsBalanced(char* expression, int length){
             
             /* ASCII codes:
             *  ( - 40; ) - 41; [ -  91; ] - 93; { - 123; } - 125.
-            * So, when we subtract a pair of corresponding brackets (e.g, '(' - ')') the result should be 1 or 2, nothing more, nothing less.
+            * So, when we subtract a pair of corresponding brackets (e.g, ')' - '(') the result should be 1 or 2, nothing more, nothing less.
             */
             int result = (int) expression[i] - (int) s.top();
             if(result < 1 || result > 2) //the last opened bracket doesn't match the just read closing bracket.
